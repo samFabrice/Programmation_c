@@ -3,19 +3,20 @@
 #include <stdbool.h>
 #include "affiche.h"
 
-joueur_contre_joueur (char mondeCarre[][10] , int dim)
+void joueur_contre_joueur (char mondeCarre[][10] , int dim)
 {
     char couleur, joueur1 , joueur2;
-    joueur2 = "@";
-    joueur1 = "^";
-    bool changed = true;
-    
-    if (joueur1 == ^)
+    joueur2 = '@';
+    joueur1 = '^';
+    int changed = 1;
+     printf("Joueur_1:Choisir une couleur parmi: A,B,C,D,E,F,G \n");
+     scanf("%c",&couleur);
+    if (joueur1 == '^')
     {
-        while (getchar() != "\n");
-        while (changed = true)
+        while (getchar() != '\n');
+        while (changed = 1)
             {
-                changed = false;
+                changed = 0;
                 for (int i =0; i<dim; i++)
                     {
                         for (int j =9; j>=0; j--)
@@ -25,22 +26,22 @@ joueur_contre_joueur (char mondeCarre[][10] , int dim)
                                         if ( j+1 <=  9 && mondeCarre[i][j+1] == couleur)  
                                                 {
                                                     mondeCarre[i][j+1] = joueur1;
-                                                    changed = true;
+                                                    changed = 1;
                       
                                                 }
                                         else if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur1;
-                                                    changed = true;
+                                                    changed = 1;
                                                 }
                                         else if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur1;
-                                                changed = true;
+                                                    changed = 1;
                                                 }
                                         else 
                                                 {
-                                                    changed = false;
+                                                    changed = 0;
                                                 }
                                     
                                     } 
@@ -51,13 +52,14 @@ joueur_contre_joueur (char mondeCarre[][10] , int dim)
     }
     
     
-    
-    if (joueur2 == @)
+     printf("Joueur2:Choisir une couleur parmi: A,B,C,D,E,F,G \n");
+     scanf("%c",&couleur);
+    if (joueur2 == '@')
     {
-        while (getchar() != "\n");
-        while (changed = true)
+        while (getchar() != '\n');
+        while (changed = 1)
             {
-                changed = false;
+                changed = 0;
                 for (int i =0; i<dim; i++)
                     {
                         for (int j =9; j>=0; j--)
@@ -67,21 +69,21 @@ joueur_contre_joueur (char mondeCarre[][10] , int dim)
                                         if ( j+1 <=  9 && mondeCarre[i][j+1] == couleur)  
                                                 {
                                                     mondeCarre[i][j+1] = joueur2;
-                                                    changed = true;
+                                                    changed = 1;
                                                 }
                                         else if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur2;
-                                                    changed = true;
+                                                    changed = 1;
                                                 }
                                         else if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur2;
-                                                    changed = true;
+                                                    changed = 0;
                                                 }
                                         else 
                                                 {
-                                                    changed = false;
+                                                    changed = 1;
                                                 }
                                     
                                     } 

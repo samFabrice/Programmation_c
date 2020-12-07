@@ -5,6 +5,7 @@
 #include "init.h"
 #include "aleatoire.h"
 #include "jouer_un_coup.h"
+// #include "joueur_contre_joueur.h"
 
 int main(int argc, int *argv[])
 {
