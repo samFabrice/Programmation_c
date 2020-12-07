@@ -14,7 +14,7 @@ void joueur_contre_joueur (char mondeCarre[][10] , int dim)
     if (joueur1 == '^')
     {
         while (getchar() != '\n');
-        while (changed = 1)
+        while (changed > 0)
             {
                 changed = 0;
                 for (int i =0; i<dim; i++)
@@ -57,7 +57,7 @@ void joueur_contre_joueur (char mondeCarre[][10] , int dim)
     if (joueur2 == '@')
     {
         while (getchar() != '\n');
-        while (changed = 1)
+        while (changed > 0)
             {
                 changed = 0;
                 for (int i =0; i<dim; i++)
@@ -79,11 +79,11 @@ void joueur_contre_joueur (char mondeCarre[][10] , int dim)
                                         else if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur2;
-                                                    changed = 0;
+                                                    changed = 1;
                                                 }
                                         else 
                                                 {
-                                                    changed = 1;
+                                                    changed = 0;
                                                 }
                                     
                                     } 
