@@ -13,11 +13,8 @@ int main(int argc, int *argv[])
     char mondeCarre[dim][dim] ;
     
     init (mondeCarre, dim);
-    
     aleatoire(mondeCarre, dim);
     jouer_un_coup(mondeCarre, dim);
-    
-    affiche (mondeCarre, dim);
     return 0;
 }
 

@@ -1,1 +1,2 @@
-# Programmation_c
+# progC
+Le jeu des 7 couleurs

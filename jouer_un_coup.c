@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include "affiche.h"
 void jouer_un_coup (char mondeCarre[][10] , int dim)  
 {
     char joueur, couleur ;
@@ -47,7 +47,8 @@ void jouer_un_coup (char mondeCarre[][10] , int dim)
              } 
         }
      }
-    } 
+    }
+    affiche (mondeCarre, dim); 
 }
 
 
