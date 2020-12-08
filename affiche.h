@@ -1,1 +1,1 @@
-void affiche(char mondeCarre[][10], int dim);
+void affiche(char mondeCarre[10][10], int dim);

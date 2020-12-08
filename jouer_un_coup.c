@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "affiche.h"
-void jouer_un_coup (char mondeCarre[][10] , int dim)  
+void jouer_un_coup (char mondeCarre[10][10] , int dim)  
 {
     char joueur, couleur ;
     
@@ -25,16 +25,16 @@ void jouer_un_coup (char mondeCarre[][10] , int dim)
                       changed = 1;
                       
                   }
-                else if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
+                if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
                 { 
                     mondeCarre[i][j-1] = joueur;
                     changed = 1;
                 }
-                else if (i+1 <= 9 && mondeCarre[i+1][j] == couleur )
+                if (i+1 <= 9 && mondeCarre[i+1][j] == couleur )
                 {      mondeCarre[i+1][j] = joueur;    
                        changed = 1;
                 }    
-                else if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
+                if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                 {
                     mondeCarre[i-1][j] = joueur;
                     changed = 1;
