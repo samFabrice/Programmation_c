@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <time.h>
 #include "affiche.h"
 #include "init.h"
 #include "aleatoire.h"
