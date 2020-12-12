@@ -1,54 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 #include "affiche.h"
+#include "affiche.h"
+#include "init.h"
+#include "joueur_1.h"
+#include "joueur_2.h"
+#include "aleatoire.h"
+
 void jouer_un_coup (char mondeCarre[10][10] , int dim)  
 {
-    char joueur, couleur ;
-    
-    printf("Veuillez choisir le quel des joueur entre @ et ^ vont jouer ainsi que la couleur \n");
-    scanf("%c , %c ", &joueur , &couleur);
-    int changed = 1;
-    while (getchar()!='\n');
-    while (changed ==1)
-    {
-      changed = 0;
-      for (int i =0; i<dim; i++)
-     {
-        for (int j =9; j>=0; j--)
-        {
-            if ( mondeCarre[i][j] == joueur)
-            {    
-                if ( j+1 <=  9 && mondeCarre[i][j+1] == couleur)  
-                  {
-                      mondeCarre[i][j+1] = joueur;
-                      changed = 1;
-                      
-                  }
-                if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
-                { 
-                    mondeCarre[i][j-1] = joueur;
-                    changed = 1;
-                }
-                if (i+1 <= 9 && mondeCarre[i+1][j] == couleur )
-                {      mondeCarre[i+1][j] = joueur;    
-                       changed = 1;
-                }    
-                if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
-                {
-                    mondeCarre[i-1][j] = joueur;
-                    changed = 1;
-                }
-                else 
-                {
-                    changed = 0;
-                }
-               
-             } 
-        }
-     }
-    }
-    affiche (mondeCarre, dim); 
+     init (mondeCarre, dim);
+     aleatoire(mondeCarre, dim);
+     affiche(mondeCarre, dim);
+     printf("Le joueur_1 va jouer en premier\n");
+     joueur_1(mondeCarre, dim);
+     sleep(1);
+     printf("C'est au tour du joeur_2\n");
+     joueur_2(mondeCarre, dim);
+     affiche(mondeCarre, dim);
 }
 
 

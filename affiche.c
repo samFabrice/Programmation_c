@@ -7,7 +7,7 @@ void affiche(char mondeCarre[10][10], int dim)
    {
       for(int j=0; j < dim; j++)
       {
-         printf("\033[45m %c ", mondeCarre[i][j]);
+         printf("%c", mondeCarre[i][j]);
       }
    printf("\n");
    }
