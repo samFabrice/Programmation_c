@@ -3,8 +3,8 @@ CFLAGS=-W -Wall
 EXEC = jeu
 all: $(EXEC)
 
-jeu: jeu.o  affiche.o init.o aleatoire.o jouer_un_coup.o joueur_contre_joueur.o joueur_1.o joueur_2.o
-	$(CC)  -o jeu jeu.o affiche.o init.o aleatoire.o jouer_un_coup.o  joueur_contre_joueur.o  joueur_1.o joueur_2.o $(LDFLAGS)
+jeu: jeu.o  affiche.o init.o aleatoire.o jouer_un_coup.o joueur_contre_joueur.o joueur_1.o joueur_2.o ordinateur.o
+	$(CC)  -o jeu jeu.o affiche.o init.o aleatoire.o jouer_un_coup.o  joueur_contre_joueur.o  joueur_1.o joueur_2.o ordinateur.o $(LDFLAGS)
 
 jeu.o: jeu.c
 	$(CC)  -o jeu.o -c jeu.c  $(LDFLAGS) 
@@ -17,6 +17,9 @@ jouer_un_coup.o: jouer_un_coup.c jouer_un_coup.h
 	
 joueur_VS_joueur.o: joueur_contre_joueur.c joueur_contre_joueur.h
 	$(CC) -o joueur_contre_joueur.o -c joueur_contre_joueur.c $(LDFLAGS)
+
+ordinateur.o: ordinateur.c ordinateur.h
+	$(CC) -o ordinateur.o -c ordinateur.c $(LDFLAGS)
 	
 init.o: init.c init.h
 	$(CC)  -o init.o -c init.c $(LDFLAGS) 
