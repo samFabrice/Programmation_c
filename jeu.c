@@ -5,8 +5,8 @@
 #include "affiche.h"
 #include "init.h"
 #include "aleatoire.h"
-#include "jouer_un_coup.h"
 #include "joueur_contre_joueur.h"
+#include "joueur_contre_ordinateur.h"
 #include "ordinateur.h"
 
 int main()
@@ -14,9 +14,8 @@ int main()
     const int dim = 10;
     
     char mondeCarre[dim][dim] ;
-    int i = 0;
     
-    jouer_un_coup(mondeCarre, dim);
+    joueur_contre_ordinateur(mondeCarre, dim);
     
     
     return 0;

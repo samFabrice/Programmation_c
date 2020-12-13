@@ -10,7 +10,6 @@ void ordinateur (char mondeCarre[10][10] , int dim)
     couleur_aleatoire ='A'+rand()%7;
     printf("L'ordinateur a choisi : %c \n", couleur_aleatoire );
     bool changed = true;
-    while (getchar()!='\n');
      while (changed  == true )
               {
                 changed = false;
