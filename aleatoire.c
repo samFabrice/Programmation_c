@@ -16,8 +16,8 @@ void aleatoire(char mondeCarre[30][30], int dim)
             mondeCarre[i][j] =  (rand() % (max - min )) + min;
         } 
     }
-    mondeCarre[0][29]= '^';
-    mondeCarre[29][0] = '@';
+    mondeCarre[0][29]= '$';
+    mondeCarre[29][0] = '#';
     
     
 }

@@ -8,6 +8,7 @@
 #include "joueur_contre_joueur.h"
 #include "joueur_contre_ordinateur.h"
 #include "ordinateur.h"
+#include "alea.h"
 
 int main()
 {
@@ -15,8 +16,11 @@ int main()
     const int dim = 30;
     
     char mondeCarre[dim][dim] ;
-    
-    joueur_contre_joueur(mondeCarre, dim, cpt);
+    init (mondeCarre, dim);
+    aleatoire(mondeCarre, dim);
+    affiche(mondeCarre, dim, cpt);
+    alea(mondeCarre, dim, cpt);
+    affiche(mondeCarre, dim, cpt);
     
     
     return 0;

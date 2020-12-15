@@ -10,8 +10,9 @@
 #include "ordinateur.h"
 
 
-void joueur_contre_joueur (char mondeCarre[30][30] , int dim, float cpt , float cpt1, float cpt2)  
+void joueur_contre_joueur (char mondeCarre[30][30] , int dim, float cpt)  
 {
+     float cpt1 = 0; float cpt2 = 0;
      init (mondeCarre, dim);
      aleatoire(mondeCarre, dim);
      affiche(mondeCarre, dim, cpt);
