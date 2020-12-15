@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void joueur_2 (char mondeCarre[10][10] , int dim)
+void joueur_2 (char mondeCarre[30][30] , int dim, float cpt)
 {
+    
+    float compteur_1 , compteur_3 , compteur_2, compteur_4 = 0;
     char joueur_2 = '^';
     char couleur;
     printf("Le joueur_2 va choisir une couleur\n");
@@ -14,48 +16,53 @@ void joueur_2 (char mondeCarre[10][10] , int dim)
      while (changed  == true )
               {
                 changed = false;
-                for (int i =0; i<10; i++)
+                for (int i =0; i<30; i++)
                     {
-                        for (int j =9; j>0; j--)
+                        for (int j =29; j>0; j--)
                             {
                                 if ( mondeCarre[i][j] == joueur_2)
                                     {    
-                                        if ( j+1 <=  9 && mondeCarre[i][j+1] == couleur)  
+                                        if ( j+1 <=  29 && mondeCarre[i][j+1] == couleur)  
                                                 {
                                                     mondeCarre[i][j+1] = joueur_2;
-                                                    printf("%d , %d \n", i , j+1);
                                                     changed = changed | true;
-                                                    printf("voila\n");
+                                                    compteur_1 ++;
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur_2;
                                                     changed = changed | true;
-                                                    printf("voila\n");
+                                                    compteur_2 ++;
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur_2;
                                                     changed = changed | true;
-                                                    printf("voila\n");
+                                                    compteur_3 ++;
                                                 }
-                                        if (i+1 <= 9 && mondeCarre[i+1][j] == couleur)  
+                                        if (i+1 <= 29 && mondeCarre[i+1][j] == couleur)  
                                                 {
                                                     mondeCarre[i+1][j] = joueur_2;
-                                                    
                                                     changed = changed | true;
-                                                    printf("voila\n");
+                                                    compteur_4 ++;
                                                 }
                                         else 
                                                 {
                                                     changed =  false;
-                                                    printf("%d, %d \n", i , j);
-                                                    printf("non!!!!!\n");
-                                                    printf("%c \n", couleur);
+                                                   
                                                 }
+                                                
+                                                
                                     
                                     } 
                             }
+                            
+                           
                     }
-            } 
+            }
+            
+           cpt = compteur_1 + compteur_2 + compteur_3 + compteur_4;
+           cpt = (cpt /900)*100;
+           printf("%f\n", cpt);
+           
 }

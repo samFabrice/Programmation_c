@@ -1,1 +1,1 @@
-void aleatoire(char mondeCarre[10][10] , int dim);
+void aleatoire(char mondeCarre[30][30] , int dim);

@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-void aleatoire(char mondeCarre[10][10], int dim)
+void aleatoire(char mondeCarre[30][30], int dim)
 {
     const char max = 072;
     const char min = 0101;
@@ -16,8 +16,8 @@ void aleatoire(char mondeCarre[10][10], int dim)
             mondeCarre[i][j] =  (rand() % (max - min )) + min;
         } 
     }
-    mondeCarre[0][9]= '^';
-    mondeCarre[9][0] = '@';
+    mondeCarre[0][29]= '^';
+    mondeCarre[29][0] = '@';
     
     
 }

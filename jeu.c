@@ -11,11 +11,12 @@
 
 int main()
 {
-    const int dim = 10;
+    float cpt1, cpt2, cpt =0;
+    const int dim = 30;
     
     char mondeCarre[dim][dim] ;
     
-    joueur_contre_ordinateur(mondeCarre, dim);
+    joueur_contre_joueur(mondeCarre, dim, cpt);
     
     
     return 0;

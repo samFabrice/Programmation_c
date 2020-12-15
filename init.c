@@ -1,7 +1,7 @@
 # include <stdlib.h>
 #include <stdio.h>
 
-void init(char mondeCarre[10][10], int dim)
+void init(char mondeCarre[30][30], int dim)
 {
     for (int i =0; i<dim; i++)
     {
