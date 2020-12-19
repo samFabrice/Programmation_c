@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "alea.h"
 
 void ordinateur (char mondeCarre[30][30] , int dim, float cpt)
 {
-    cpt = 0;
-    int compteur_1, compteur_3, compteur_2, compteur_4 = 0;
-    char ordinateur = '^';
+    char joueur_alea ;
+    joueur_alea  = alea(mondeCarre, dim, cpt); 
+    printf("joueur_alea = %c \n", joueur_alea);
     char couleur_aleatoire ;
     printf("L'ordinateur va choisir une couleur\n");
     couleur_aleatoire ='A'+rand()%7;
@@ -19,31 +20,31 @@ void ordinateur (char mondeCarre[30][30] , int dim, float cpt)
                     {
                         for (int j = 29; j>0; j--)
                             {
-                                if ( mondeCarre[i][j] == ordinateur)
+                                if ( mondeCarre[i][j] == joueur_alea )
                                     {    
                                         if ( j+1 <=  29 && mondeCarre[i][j+1] ==  couleur_aleatoire )  
                                                 {
-                                                    mondeCarre[i][j+1] = ordinateur;
+                                                    mondeCarre[i][j+1] = joueur_alea ;
                                                     changed = changed | true;
-                                                    compteur_1 ++;
+                                                    cpt ++;
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] ==  couleur_aleatoire ) 
                                                 { 
-                                                    mondeCarre[i][j-1] = ordinateur;
+                                                    mondeCarre[i][j-1] = joueur_alea ;
                                                     changed = changed | true;
-                                                    compteur_2 ++;
+                                                    cpt ++;
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] ==  couleur_aleatoire )  
                                                 {
-                                                    mondeCarre[i-1][j] = ordinateur;
+                                                    mondeCarre[i-1][j] = joueur_alea ;
                                                     changed = changed | true;
-                                                    compteur_3 ++;
+                                                    cpt ++;
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] ==  couleur_aleatoire )  
                                                 {
-                                                    mondeCarre[i+1][j] = ordinateur;
+                                                    mondeCarre[i+1][j] = joueur_alea ;
                                                     changed = changed | true;
-                                                    compteur_4 ++;
+                                                    cpt ++;
                                                 }
                                         else 
                                                 {
@@ -56,7 +57,6 @@ void ordinateur (char mondeCarre[30][30] , int dim, float cpt)
                     }
             }
             
-            cpt = compteur_1 + compteur_2 + compteur_3 + compteur_4; 
             cpt = (cpt / 900)*100;
             printf("%f\n", cpt);
 }

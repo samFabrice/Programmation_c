@@ -19,7 +19,7 @@ int main()
     init (mondeCarre, dim);
     aleatoire(mondeCarre, dim);
     affiche(mondeCarre, dim, cpt);
-    alea(mondeCarre, dim, cpt);
+    ordinateur(mondeCarre, dim, cpt);
     affiche(mondeCarre, dim, cpt);
     
     
