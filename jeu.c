@@ -9,18 +9,21 @@
 #include "joueur_contre_ordinateur.h"
 #include "ordinateur.h"
 #include "alea.h"
+#include "alea2.h"
+
+
 
 int main()
 {
-    float cpt1, cpt2, cpt =0;
-    const int dim = 30;
+    const int dim = 30; float cpt;
     
     char mondeCarre[dim][dim] ;
-    init (mondeCarre, dim);
-    aleatoire(mondeCarre, dim);
-    affiche(mondeCarre, dim, cpt);
-    ordinateur(mondeCarre, dim, cpt);
-    affiche(mondeCarre, dim, cpt);
+    
+   
+   
+    
+    joueur_contre_ordinateur(mondeCarre, dim, cpt);
+    
     
     
     return 0;

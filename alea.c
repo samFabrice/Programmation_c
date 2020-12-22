@@ -10,3 +10,4 @@ char alea (char mondeCarre[30][30],  int dim , float cpt)
     printf("L'ordinateur a joué %c\n", ordinateur);
     return ordinateur;
 }
+
