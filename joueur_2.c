@@ -5,8 +5,9 @@
 void joueur_2 (char mondeCarre[30][30] , int dim, float cpt)
 {
     
-    char joueur_2 = '$';
+    char joueur_2 = '^';
     char couleur;
+    printf("Le joueur_2  = ^ \n");
     printf("Le joueur_2 va choisir une couleur\n");
     scanf("%c", & couleur);
     printf("Le joueur_2 a choisi : %c \n", couleur);
