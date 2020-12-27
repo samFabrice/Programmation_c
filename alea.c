@@ -4,10 +4,13 @@
 
 char alea (char mondeCarre[30][30],  int dim , float cpt)
 {
+    /*
+     Cette fonction permet de choisir de manière aléatoire l'une des 7 couleurs comprises entre A et G
+    */
     cpt = 0;
-    char ordinateur;
-    ordinateur = '#' +rand()%2;
-    printf("L'ordinateur a joué %c\n", ordinateur);
-    return ordinateur;
+    char couleur_aleatoire;
+    couleur_aleatoire  = 'A' +rand()%7;
+    printf("L'ordinateur a joué %c\n", couleur_aleatoire);
+    return couleur_aleatoire;
 }
 
