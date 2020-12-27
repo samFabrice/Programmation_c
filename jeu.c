@@ -19,10 +19,7 @@ int main()
     
     char mondeCarre[dim][dim] ;
     
-   
-   
-    
-    joueur_contre_ordinateur(mondeCarre, dim, cpt);
+    joueur_contre_ordinateur(mondeCarre, dim, cpt); // Ici on teste la fonction joueur_contre ordinateur
     
     
     
