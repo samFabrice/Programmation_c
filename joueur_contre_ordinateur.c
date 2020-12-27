@@ -24,7 +24,7 @@ void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim, float cpt)
      int i = 0;
      while (i<10)
      {
-     joueur_1(mondeCarre, dim, cpt);
+     joueur_2(mondeCarre, dim, cpt);
      sleep(1.5);
      printf("C'est au tour du joueur aléatoire \n");
      alea2(mondeCarre, dim, cpt);
