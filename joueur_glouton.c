@@ -1,26 +1,23 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "alea.h"
+#include "x.h"
 #include <time.h>
 #include <unistd.h>
-/*
- Cette fonction joue  un joueur artificiel en choisissant à chaque tour une couleur
-aléatoirement mais parmi les couleurs qui peuvent ajouter des cases à sa zone.
- */
-void alea2 (char mondeCarre[30][30],  int dim , float cpt)
+
+void glouton (char mondeCarre[30][30],  int dim , float cpt)
 {
-    char joueur_alea ; 
+    char joueur_glouton= '^';
+    printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
-    joueur_alea  = '@' ;  // Ici je joueur aléaloire joue  ^
-    printf("joueur_alea = %c \n", joueur_alea);
     char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
                 for (int i =0; i<30; i++)
                     {
                         for (int j = 0; j<30; j++)
                             {
-                                if ( mondeCarre[i][j] == joueur_alea )
+                                if ( mondeCarre[i][j] == joueur_glouton )
                                 {    
                                    if ( (j+1 <=  29 && mondeCarre[i][j+1] ==  'A' ) || (j-1 >= 0 && mondeCarre[i][j-1] ==  'A') || (i+1 <= 29 && mondeCarre[i+1][j] == 'A' ) || (i-1 >= 0 && mondeCarre[i-1][j] ==  'A') )
                                                 {
@@ -66,13 +63,24 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
                               
                             }
                     }
+                    
+                          
+                      /*  
+                        for(int i =0; i < dim; i++)
+                            {                                       
+                                printf("%c \n ", tab[i]);
+                            }
+                            */
             
+            couleur_aleatoire = x (tab,10);
             
+            printf("Le joueur glouton a joue %c\n",couleur_aleatoire);
+          /*  
             srand(time(NULL));
             couleur_aleatoire =tab[rand()%o]; // Cette fonction permet choisir aléatoirement une des couleurs qui se trouvent dans la zone du joueur
             printf("\n");
-            printf("Le joueur aleatoire a joue %c\n",couleur_aleatoire);
-            
+            printf("Le joueur glouton a joue %c\n",couleur_aleatoire);
+           */ 
             
     bool changed = true;
     //while (getchar()!='\n');
@@ -83,29 +91,29 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
                     {
                         for (int j =0; j<30; j++)
                             {
-                                if ( mondeCarre[i][j] == joueur_alea)
+                                if ( mondeCarre[i][j] == joueur_glouton)
                                     {    
                                         if ( j+1 <=  29 && mondeCarre[i][j+1] == couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i][j+1] = joueur_alea;
+                                                    mondeCarre[i][j+1] = joueur_glouton;
                                                     changed = changed | true;
                                                     cpt ++;
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur_aleatoire) 
                                                 { 
-                                                    mondeCarre[i][j-1] = joueur_alea;
+                                                    mondeCarre[i][j-1] = joueur_glouton;
                                                     changed = changed | true;
                                                     cpt ++;
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i-1][j] = joueur_alea;
+                                                    mondeCarre[i-1][j] = joueur_glouton;
                                                     changed = changed | true;
                                                     cpt ++;
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] ==couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i+1][j] = joueur_alea;
+                                                    mondeCarre[i+1][j] = joueur_glouton;
                                                     changed = changed | true;
                                                     cpt ++;
                                                 }
@@ -127,5 +135,5 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
            
            cpt = (cpt /900)*100;
            printf("%f\n", cpt);
-            
+    
 }

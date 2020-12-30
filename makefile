@@ -3,8 +3,8 @@ CFLAGS=-W -Wall
 EXEC = jeu
 all: $(EXEC)
 
-jeu: jeu.o  affiche.o init.o aleatoire.o joueur_contre_joueur.o joueur_1.o joueur_2.o ordinateur.o joueur_contre_ordinateur.o alea.o alea2.o 
-	$(CC)  -o jeu jeu.o affiche.o init.o aleatoire.o  joueur_contre_joueur.o joueur_contre_ordinateur.o  joueur_1.o joueur_2.o ordinateur.o alea.o alea2.o   $(LDFLAGS)
+jeu: jeu.o  affiche.o init.o aleatoire.o joueur_contre_joueur.o joueur_1.o joueur_2.o ordinateur.o joueur_contre_ordinateur.o alea.o alea2.o joueur_glouton.o x.o
+	$(CC)  -o jeu jeu.o affiche.o init.o aleatoire.o  joueur_contre_joueur.o joueur_contre_ordinateur.o  joueur_1.o joueur_2.o ordinateur.o alea.o alea2.o joueur_glouton.o  x.o $(LDFLAGS)
 
 jeu.o: jeu.c
 	$(CC)  -o jeu.o -c jeu.c  $(LDFLAGS) 
@@ -28,13 +28,19 @@ alea2.o: alea2.c alea2.h
 
 ordinateur.o: ordinateur.c ordinateur.h
 	$(CC) -o ordinateur.o -c ordinateur.c $(LDFLAGS)
+
+x.o: x.c x.h
+	$(CC) -o x.o -c x.c $(LDFLAGS)
 	
 init.o: init.c init.h
 	$(CC)  -o init.o -c init.c $(LDFLAGS) 
 	
 joueur_1.o : joueur_1.c joueur_1.h
 	$(CC)  -o joueur_1.o -c joueur_1.c $(LDFLAGS)
-	
+
+joueur_glouton.o : joueur_glouton.c joueur_glouton.h
+	$(CC)  -o joueur_glouton.o -c joueur_glouton.c $(LDFLAGS)	
+
 joueur_2.o : joueur_2.c joueur_2.h
 	$(CC)  -o joueur_2.o -c joueur_2.c $(LDFLAGS)
 

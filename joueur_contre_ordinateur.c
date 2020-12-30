@@ -7,6 +7,7 @@
 #include "joueur_2.h"
 #include "aleatoire.h"
 #include "ordinateur.h"
+#include "joueur_glouton.h"
 #include "alea2.h"
 #include <time.h>
 #include <unistd.h>
@@ -22,9 +23,9 @@ void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim, float cpt)
     
      // Ces lignes de codes suivantes permettent de tester la stratégie de l'aléa contre un joueur
      int i = 0;
-     while (i<10)
+     while (i<100)
      {
-     joueur_2(mondeCarre, dim, cpt);
+     glouton(mondeCarre, dim, cpt);
      sleep(1.5);
      printf("C'est au tour du joueur aléatoire \n");
      alea2(mondeCarre, dim, cpt);
