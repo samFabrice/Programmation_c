@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "alea.h"
-#include "x.h"
+#include "loi_du_plus_fort.h"
 #include <time.h>
 #include <unistd.h>
 
@@ -11,7 +11,7 @@ void glouton (char mondeCarre[30][30],  int dim , float cpt)
     char joueur_glouton= '^';
     printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
-    char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
+    char tab[100] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
                 for (int i =0; i<30; i++)
                     {
@@ -64,23 +64,17 @@ void glouton (char mondeCarre[30][30],  int dim , float cpt)
                             }
                     }
                     
-                          
-                      /*  
-                        for(int i =0; i < dim; i++)
+                        /*
+                        for(int i =0; i < 100; i++)
                             {                                       
                                 printf("%c \n ", tab[i]);
                             }
-                            */
+                        */    
             
-            couleur_aleatoire = x (tab,10);
+            couleur_aleatoire = loi_du_plus_fort(tab,10);
             
             printf("Le joueur glouton a joue %c\n",couleur_aleatoire);
-          /*  
-            srand(time(NULL));
-            couleur_aleatoire =tab[rand()%o]; // Cette fonction permet choisir aléatoirement une des couleurs qui se trouvent dans la zone du joueur
-            printf("\n");
-            printf("Le joueur glouton a joue %c\n",couleur_aleatoire);
-           */ 
+         
             
     bool changed = true;
     //while (getchar()!='\n');

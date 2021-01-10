@@ -10,19 +10,31 @@
 #include "ordinateur.h"
 #include "alea.h"
 #include "alea2.h"
+#include "joueur_glouton.h"
+
 
 
 
 int main()
 {
+    
     const int dim = 30; float cpt;
     
     char mondeCarre[dim][dim] ;
-    
-    joueur_contre_ordinateur(mondeCarre, dim, cpt); // Ici on teste la fonction joueur_contre ordinateur
-    
-    
-    
+      init (mondeCarre, dim);
+     aleatoire(mondeCarre, dim);
+     affiche(mondeCarre, dim, cpt);
+     int i = 0;
+    while (i<5)
+    {
+    glouton(mondeCarre, dim, cpt); // Ici on teste la fonction joueur_contre ordinateur
+    i++;
+    }
+     affiche(mondeCarre, dim, cpt);
+     
+     /*
+      * Printf("Bonjour !!! Bienvenue dans le jeu des 7 couleurs");
+      * /
     return 0;
 }
 
