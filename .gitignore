@@ -13,4 +13,5 @@ ordinateur.o
 joueur_contre_joueur.o
 joueur_contre_ordinateur.o
 alea2.o
+jeu
 
