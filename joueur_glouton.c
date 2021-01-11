@@ -8,7 +8,7 @@
 
 void glouton (char mondeCarre[30][30],  int dim , float cpt)
 {
-    char joueur_glouton= '^';
+    char joueur_glouton= '@';
     printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
     char tab[100] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
