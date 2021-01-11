@@ -1,0 +1,16 @@
+affiche.o
+alea.o
+loi_du_plus_fort.o
+loi_du_plus_fort2.o
+joueur_glouton.o
+init.o
+jeu.o
+joueur_1.o
+joueur_2.o
+aleatoire.o
+joueur_glouton_prevoyant.o
+ordinateur.o
+joueur_contre_joueur.o
+joueur_contre_ordinateur.o
+alea2.o
+
