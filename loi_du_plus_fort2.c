@@ -75,7 +75,7 @@ int loi_du_plus_fort2(char *tab , int taille)
         }
       }
 
-    printf("a = %d, b = %d,c = %d, d = %d, e = %d, f = %d, g = %d \n", a,b,c,d,e,f,g);
+  //  printf("a = %d, b = %d,c = %d, d = %d, e = %d, f = %d, g = %d \n", a,b,c,d,e,f,g);
  
         if ((a>=b && a>=c && a>=d &&  a>=e && a>=f && a>=g)  ) return 'A';
         
@@ -90,5 +90,11 @@ int loi_du_plus_fort2(char *tab , int taille)
         if (f>=a && f>=b && f>=c && f>=d &&  f>=e  && f>=g  ) return 'F';
         
         if (g>=a && g>=b && g>=c && g>=d &&  g>=e && g>=f ) return 'G';
+        
+        a = 0; b = 0; c = 0; d = 0; e = 0; f = 0; g = 0;
+
+                            
+                         
+                            
 
 }

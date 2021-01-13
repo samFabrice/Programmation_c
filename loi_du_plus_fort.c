@@ -75,7 +75,7 @@ int loi_du_plus_fort(char *tab , int taille)
         }
       }
 
-    printf("%d, %d,%d, %d,%d, %d,%d \n", a,b,c,d,e,f,g);
+   // printf("%d, %d,%d, %d,%d, %d,%d \n", a,b,c,d,e,f,g);
  
         if ((a>=b && a>=c && a>=d &&  a>=e && a>=f && a>=g)  ) return 'A';
         

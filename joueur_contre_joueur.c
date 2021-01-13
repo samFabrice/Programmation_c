@@ -10,29 +10,22 @@
 #include "ordinateur.h"
 
 
-void joueur_contre_joueur (char mondeCarre[30][30] , int dim, float cpt)  
+void joueur_contre_joueur (char mondeCarre[30][30] , int dim)  
 {
-     float cpt1 = 0; float cpt2 = 0;
+    
      init (mondeCarre, dim);
      aleatoire(mondeCarre, dim);
-     affiche(mondeCarre, dim, cpt);
+     affiche(mondeCarre, dim);
      int i = 0;
      while (i<2)
      {
      printf("Le joueur_1 va jouer en premier\n");
-     joueur_1(mondeCarre, dim, cpt1);
+     joueur_1(mondeCarre, dim);
      printf("C'est au tour du joueur_2 \n");
-     joueur_2(mondeCarre, dim, cpt2);
-     affiche(mondeCarre, dim, cpt);
+     joueur_2(mondeCarre, dim);
+     affiche(mondeCarre, dim);
      i++;
-     }
-     if (cpt1 > cpt2)      printf("Le joueur_1 est vainqueur de la partie\n ");
-      
-     else if  (cpt2 > cpt1)   printf("Le joueur_2 est vainqueur de la partie\n");
-     
-     else                     printf("Il n'y a pas de vainqueur \n!!!");
-     
-    
+     }  
      
 }
 

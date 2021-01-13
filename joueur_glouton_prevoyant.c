@@ -6,18 +6,19 @@
 #include <time.h>
 #include <unistd.h>
 
-void glouton_prevoyant(char mondeCarre[30][30],  int dim , float cpt)
+void glouton_prevoyant(char mondeCarre[30][30],  int dim)
 {
-    char joueur_glouton= '^';
-    printf("joueur_glouton = %c \n", joueur_glouton);
+    char joueur_glouton_prevoyant= '^';
+  float score_joueur_glouton_prevoyant = 0;
+    printf("joueur_glouton_prevoyant = %c \n", joueur_glouton_prevoyant);
     char couleur_aleatoire;
-    char tab[100] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
+    char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
                 for (int i =0; i<30; i++)
                     {
                         for (int j = 0; j<30; j++)
                             {
-                                if ( mondeCarre[i][j] == joueur_glouton )
+                                if ( mondeCarre[i][j] == joueur_glouton_prevoyant )
                                 {    
                                    if ( (j+1 <=  29 && mondeCarre[i][j+1] ==  'A' ) || (j-1 >= 0 && mondeCarre[i][j-1] ==  'A') || (i+1 <= 29 && mondeCarre[i+1][j] == 'A' ) || (i-1 >= 0 && mondeCarre[i-1][j] ==  'A') )
                                                 {
@@ -104,11 +105,10 @@ void glouton_prevoyant(char mondeCarre[30][30],  int dim , float cpt)
                     }
                     
                         
-                        for(int i =0; i < 100; i++)
+                 /*  for(int i =0; i < 100; i++)
                             {                                       
                                 printf("%c ", tab[i]);
-                            }
-                            
+                            }*/
             
             couleur_aleatoire = loi_du_plus_fort2(tab,10);
             
@@ -124,31 +124,31 @@ void glouton_prevoyant(char mondeCarre[30][30],  int dim , float cpt)
                     {
                         for (int j =0; j<30; j++)
                             {
-                                if ( mondeCarre[i][j] == joueur_glouton)
+                                if ( mondeCarre[i][j] == joueur_glouton_prevoyant)
                                     {    
                                         if ( j+1 <=  29 && mondeCarre[i][j+1] == couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i][j+1] = joueur_glouton;
+                                                    mondeCarre[i][j+1] = joueur_glouton_prevoyant;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                              
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur_aleatoire) 
                                                 { 
-                                                    mondeCarre[i][j-1] = joueur_glouton;
+                                                    mondeCarre[i][j-1] = joueur_glouton_prevoyant;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                           
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i-1][j] = joueur_glouton;
+                                                    mondeCarre[i-1][j] = joueur_glouton_prevoyant;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                              
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] ==couleur_aleatoire)  
                                                 {
-                                                    mondeCarre[i+1][j] = joueur_glouton;
+                                                    mondeCarre[i+1][j] = joueur_glouton_prevoyant;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                                 
                                                 }
                                         else 
                                                 {
@@ -165,8 +165,20 @@ void glouton_prevoyant(char mondeCarre[30][30],  int dim , float cpt)
                     }
             }
             
+            
            
-           cpt = (cpt /900)*100;
-           printf("%f\n", cpt);
     
+    score_joueur_glouton_prevoyant = 0;
+    int i,j;
+    for (i=0;i<dim;i++)
+    {
+        for(j=0;j<dim;j++){
+            if (mondeCarre[i][j] == joueur_glouton_prevoyant)
+                score_joueur_glouton_prevoyant ++;
+        }
+    }
+          score_joueur_glouton_prevoyant =   (score_joueur_glouton_prevoyant/900)*100;
+        printf("score_joueur_glouton_prevoyant = %f\n", score_joueur_glouton_prevoyant);
+    
+                            
 }

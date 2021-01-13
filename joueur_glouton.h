@@ -1,1 +1,1 @@
-void glouton (char mondeCarre[30][30],  int dim , float cpt);
+void glouton (char mondeCarre[30][30],  int dim);

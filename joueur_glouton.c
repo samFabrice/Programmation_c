@@ -6,12 +6,13 @@
 #include <time.h>
 #include <unistd.h>
 
-void glouton (char mondeCarre[30][30],  int dim , float cpt)
+void glouton (char mondeCarre[30][30],  int dim  )
 {
-    char joueur_glouton= '@';
+    char joueur_glouton= '^';
+    int score_joueur_glouton ;
     printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
-    char tab[100] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
+    char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
                 for (int i =0; i<30; i++)
                     {
@@ -91,25 +92,25 @@ void glouton (char mondeCarre[30][30],  int dim , float cpt)
                                                 {
                                                     mondeCarre[i][j+1] = joueur_glouton;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                                   // cpt ++;
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur_aleatoire) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur_glouton;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                                    //cpt ++;
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur_aleatoire)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur_glouton;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                                    //cpt ++;
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] ==couleur_aleatoire)  
                                                 {
                                                     mondeCarre[i+1][j] = joueur_glouton;
                                                     changed = changed | true;
-                                                    cpt ++;
+                                                    //cpt ++;
                                                 }
                                         else 
                                                 {
@@ -127,7 +128,15 @@ void glouton (char mondeCarre[30][30],  int dim , float cpt)
             }
             
            
-           cpt = (cpt /900)*100;
-           printf("%f\n", cpt);
-    
+           //cpt = (cpt /900)*100;
+           //printf("%f\n", cpt);
+    score_joueur_glouton = 0;
+    int i,j;
+    for (i=0;i<dim;i++){
+        for(j=0;j<dim;j++){
+            if (mondeCarre[i][j] == joueur_glouton)
+                score_joueur_glouton ++;
+        }
+    }
+    printf("score_joueur_glouton = %d\n", score_joueur_glouton);
 }

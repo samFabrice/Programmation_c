@@ -12,7 +12,7 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
 {
     char joueur_alea ; 
     char couleur_aleatoire;
-    joueur_alea  = '@' ;  // Ici je joueur aléaloire joue  ^
+    joueur_alea  = '@' ;  
     printf("joueur_alea = %c \n", joueur_alea);
     char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
@@ -69,7 +69,11 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
             
             
             srand(time(NULL));
-            couleur_aleatoire =tab[rand()%o]; // Cette fonction permet choisir aléatoirement une des couleurs qui se trouvent dans la zone du joueur
+            //couleur_aleatoire =tab[rand()%o]; // Cette fonction permet choisir aléatoirement une des couleurs qui se trouvent dans la zone du joueur
+            int a = 0;
+            a =  (rand() % (o - 1 )) + 1;
+            couleur_aleatoire = tab[a];
+            printf("***** = %d\n ", a);
             printf("\n");
             printf("Le joueur aleatoire a joue %c\n",couleur_aleatoire);
             
@@ -89,25 +93,25 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
                                                 {
                                                     mondeCarre[i][j+1] = joueur_alea;
                                                     changed = changed | true;
-                                                    cpt ++;
+
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur_aleatoire) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur_alea;
                                                     changed = changed | true;
-                                                    cpt ++;
+  
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur_aleatoire)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur_alea;
                                                     changed = changed | true;
-                                                    cpt ++;
+          
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] ==couleur_aleatoire)  
                                                 {
                                                     mondeCarre[i+1][j] = joueur_alea;
                                                     changed = changed | true;
-                                                    cpt ++;
+          
                                                 }
                                         else 
                                                 {
@@ -125,7 +129,23 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
             }
             
            
-           cpt = (cpt /900)*100;
-           printf("%f\n", cpt);
+     
+
             
+    float score_joueur_alea = 0;
+    int i,j;
+    for (i=0;i<dim;i++)
+    {
+        for(j=0;j<dim;j++){
+            if (mondeCarre[i][j] == joueur_alea)
+                score_joueur_alea ++;
+        }
+    }
+    score_joueur_alea = (score_joueur_alea/900)*100;
+    printf("score_joueur_alea = %f\n", score_joueur_alea);
+    
+            
+           
+      
+      
 }

@@ -11,30 +11,31 @@
 #include "alea2.h"
 #include <time.h>
 #include <unistd.h>
+#include "joueur_glouton_prevoyant.h"
 
 
 
-void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim, float cpt)  
+void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim)  
 {
      init (mondeCarre, dim);
      aleatoire(mondeCarre, dim);
-     affiche(mondeCarre, dim, cpt);
+     affiche(mondeCarre, dim);
      printf("\n");
     
      // Ces lignes de codes suivantes permettent de tester la stratégie de l'aléa contre un joueur
      int i = 0;
-     while (i<100)
+     while (i<10)
      {
-     glouton(mondeCarre, dim, cpt);
-     sleep(1.5);
-     printf("C'est au tour du joueur aléatoire \n");
-     alea2(mondeCarre, dim, cpt);
-     sleep(1.5);
-     printf("\n");
-     affiche(mondeCarre, dim, cpt)  ;
+     glouton_prevoyant(mondeCarre, dim);
+     //sleep(1.5);
+     //printf("C'est au tour du joueur aléatoire \n");
+     alea2(mondeCarre, dim);
+     //sleep(1.5);
+     //printf("\n");
+     //affiche(mondeCarre, dim)  ;
      i++;
      }
     
-     
+     affiche(mondeCarre, dim)  ;
      
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void joueur_2 (char mondeCarre[30][30] , int dim, float cpt)
+void joueur_2 (char mondeCarre[30][30] , int dim)
 {
     
     char joueur_2 = '^';
@@ -26,25 +26,21 @@ void joueur_2 (char mondeCarre[30][30] , int dim, float cpt)
                                                 {
                                                     mondeCarre[i][j+1] = joueur_2;
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         if ( j-1 >= 0 && mondeCarre[i][j-1] == couleur) 
                                                 { 
                                                     mondeCarre[i][j-1] = joueur_2;
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         if (i-1 >= 0 && mondeCarre[i-1][j] == couleur)  
                                                 {
                                                     mondeCarre[i-1][j] = joueur_2;
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         if (i+1 <= 29 && mondeCarre[i+1][j] == couleur)  
                                                 {
                                                     mondeCarre[i+1][j] = joueur_2;
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         else 
                                                 {
@@ -62,7 +58,5 @@ void joueur_2 (char mondeCarre[30][30] , int dim, float cpt)
             }
             
            
-           cpt = (cpt /900)*100;
-           printf("%f\n", cpt);
            
 }

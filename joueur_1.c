@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void joueur_1 (char mondeCarre[30][30] , int dim, float cpt)
+void joueur_1 (char mondeCarre[30][30] , int dim)
 {
     char couleur;
     printf("Joueur_1 = @ \n");
@@ -27,7 +27,6 @@ void joueur_1 (char mondeCarre[30][30] , int dim, float cpt)
                                                     mondeCarre[i][j+1] = '@';
                                                    
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
             
     
@@ -35,19 +34,16 @@ void joueur_1 (char mondeCarre[30][30] , int dim, float cpt)
                                                 { 
                                                     mondeCarre[i][j-1] = '@';
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         if (mondeCarre[i-1][j] == couleur && i-1 >= 0 && mondeCarre[i][j] == '@')  
                                                 {
                                                     mondeCarre[i-1][j] = '@';
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         if (mondeCarre[i+1][j] == couleur && i+1 <= 29 && mondeCarre[i+1][j] == '@')  
                                                 {
                                                     mondeCarre[i+1][j] = '@';
                                                     changed = changed | true;
-                                                    cpt ++;
                                                 }
                                         else 
                                                 {
@@ -59,9 +55,6 @@ void joueur_1 (char mondeCarre[30][30] , int dim, float cpt)
                                      
                             }
                     }
-                   
-                    cpt = (cpt /900)*100;
-                     printf("%f\n", cpt);
                     
             } 
 
