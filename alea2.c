@@ -71,10 +71,10 @@ void alea2 (char mondeCarre[30][30],  int dim , float cpt)
             srand(time(NULL));
             //couleur_aleatoire =tab[rand()%o]; // Cette fonction permet choisir aléatoirement une des couleurs qui se trouvent dans la zone du joueur
             int a = 0;
-            a =  (rand() % (o - 1 )) + 1;
+            a =  (rand() % (o - 0 )) + 0;
             couleur_aleatoire = tab[a];
             printf("***** = %d\n ", a);
-            printf("\n");
+           // printf("\n");
             printf("Le joueur aleatoire a joue %c\n",couleur_aleatoire);
             
             
