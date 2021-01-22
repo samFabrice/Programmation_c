@@ -1,1 +1,1 @@
-void joueur_contre_joueur (char mondeCarre[30][30], int dim);
+void joueur_contre_joueur (char mondeCarre[30][30] , int dim) ;

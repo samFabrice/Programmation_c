@@ -9,7 +9,7 @@
 void glouton (char mondeCarre[30][30],  int dim  )
 {
     char joueur_glouton= '^';
-    int score_joueur_glouton ;
+     float score_joueur_glouton ;
     printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
     char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
@@ -65,12 +65,7 @@ void glouton (char mondeCarre[30][30],  int dim  )
                             }
                     }
                     
-                        /*
-                        for(int i =0; i < 100; i++)
-                            {                                       
-                                printf("%c \n ", tab[i]);
-                            }
-                        */    
+    
             
             couleur_aleatoire = loi_du_plus_fort(tab,10);
             
@@ -78,7 +73,6 @@ void glouton (char mondeCarre[30][30],  int dim  )
          
             
     bool changed = true;
-    //while (getchar()!='\n');
      while (changed  == true )
               {
                 changed = false;
@@ -138,5 +132,6 @@ void glouton (char mondeCarre[30][30],  int dim  )
                 score_joueur_glouton ++;
         }
     }
-    printf("score_joueur_glouton = %d\n", score_joueur_glouton);
+     score_joueur_glouton =   (score_joueur_glouton/900)*100;
+    printf("score_joueur_glouton = %f\n", score_joueur_glouton);
 }

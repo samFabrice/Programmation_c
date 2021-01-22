@@ -4,7 +4,7 @@
 
 void joueur_2 (char mondeCarre[30][30] , int dim)
 {
-    
+    float score_joueur_2 = 0;
     char joueur_2 = '^';
     char couleur;
     printf("Le joueur_2  = ^ \n");
@@ -56,7 +56,16 @@ void joueur_2 (char mondeCarre[30][30] , int dim)
                            
                     }
             }
-            
+    int i,j;
+    for (i=0;i<dim;i++)
+    {
+        for(j=0;j<dim;j++){
+            if (mondeCarre[i][j] == joueur_2)
+                score_joueur_2 ++;
+        }
+    }
+    score_joueur_2 = (score_joueur_2/900)*100;
+    printf("score_joueur_1 = %f\n", score_joueur_2);
            
            
 }

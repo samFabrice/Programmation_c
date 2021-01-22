@@ -17,15 +17,17 @@ void joueur_contre_joueur (char mondeCarre[30][30] , int dim)
      aleatoire(mondeCarre, dim);
      affiche(mondeCarre, dim);
      int i = 0;
-     while (i<2)
+     while (getchar()!='\n');
+     while (i<4)
      {
-     printf("Le joueur_1 va jouer en premier\n");
-     joueur_1(mondeCarre, dim);
-     printf("C'est au tour du joueur_2 \n");
      joueur_2(mondeCarre, dim);
+     printf("C'est au tour du joueur_2 \n");
+     joueur_1(mondeCarre, dim);
      affiche(mondeCarre, dim);
      i++;
      }  
+     
+
      
 }
 
