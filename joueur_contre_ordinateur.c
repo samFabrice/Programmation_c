@@ -15,7 +15,7 @@
 
 
 
-void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim)  
+void joueur2_contre_ordinateur (char mondeCarre[30][30] , int dim)  
 {
      init (mondeCarre, dim);
      aleatoire(mondeCarre, dim);
@@ -24,18 +24,17 @@ void joueur_contre_ordinateur (char mondeCarre[30][30] , int dim)
     
      // Ces lignes de codes suivantes permettent de tester la stratégie de l'aléa contre un joueur
      int i = 0;
+     while (getchar()!='\n');
      while (i<10)
      {
-     glouton_prevoyant(mondeCarre, dim);
-     //sleep(1.5);
-     //printf("C'est au tour du joueur aléatoire \n");
-     alea2(mondeCarre, dim);
-     //sleep(1.5);
-     //printf("\n");
-     //affiche(mondeCarre, dim)  ;
-     i++;
+     joueur_2(mondeCarre, dim);
+      sleep(1.5);
+      printf("C'est au tour de l'ordinateur \n");
+      ordinateur(mondeCarre, dim);
+      sleep(1.5);
+      printf("\n");
+      affiche(mondeCarre, dim)  ;
+      i++;
      }
-    
-     affiche(mondeCarre, dim)  ;
      
 }
