@@ -14,34 +14,39 @@
 #include "joueur_glouton.h"
 #include "joueur_glouton_prevoyant.h"
 #include "joueur1_VS_joueur_glouton.h"
+#include "joueur2_VS_joueur_glouton_prevoyant.h"
 
 
 int main()
 {
-  
+      FILE* fichier = NULL;
+      fichier = fopen("jeu.o", "r+");
+      if (fichier != NULL)
+    {
+     
     const int dim = 30;  
     char mondeCarre[dim][dim] ;
     init(mondeCarre, dim);
     aleatoire(mondeCarre, dim);
    
-    printf("\n\n \033[44m   Bonjour !!! Bienvenue dans le merveilleux monde  des 7 couleurs\n"
-                    "    ********************************************** *****************\n\n"
+    printf("\n\n \033[44m                         Bonjour !!! Bienvenue dans le merveilleux monde  des 7 couleurs\n"
+                    "                         *****************************************************************\n\n"
             );
             
             
-printf(" \t \t =========================MENU================================ : \n");
+printf(" \t \t =================================MENU=======================================: \n");
 
 printf("\n");
           
           int choixDeLaPartie;
     
-          printf("\t \t ################# 1. joueur_contre_joueur           #########  \n");
-          printf("\t \t ################# 2.joueur_contre_ordinateur        ######### \n");
-          printf("\t \t ################# 3.joueur1_contre_joueur_glouton   ######### \n");
-          printf("\t \t ################# 4.joueur_contre_aleatoire2        ######### \n");
+          printf("\t \t ################# 1.joueur_contre_joueur                         ########### \n");
+          printf("\t \t ################# 2.joueur_contre_ordinateur                     ########### \n");
+          printf("\t \t ################# 3.joueur1_contre_joueur_glouton                ########### \n");
+          printf("\t \t ################# 4.joueur2_contre_joueur_glouton_prevoyant      ########### \n");
           printf("\n");
           
-          printf("\t \t Veuillez choir la partie que vous vous voulez jouer !!!!\n");
+          printf("\t \t Veuillez choisir la partie que vous vous voulez jouer !!!!\n");
           scanf("%d", &choixDeLaPartie);
           printf("\n");
   
@@ -70,8 +75,11 @@ printf("\n");
        
        break;
     case 4:
-       printf("Vous avez choisi la partie  joueur_contre_aleatoire2  :o)");
-       
+       printf("Vous avez choisi la partie  joueur2_contre_glouton_prevoyant:o)");
+       printf("\n");
+       printf("\t \t \t \t  Etat actuel du monde !!! \n");
+       printf("\n");
+       joueur2_Vs_joueur_glouton_prevoyant (mondeCarre , dim);
        break;
     default:
        printf("Vous n'avez pas rentré un nombre correct. Désolé mais pas de jeu pour vous  :o)");
@@ -80,12 +88,10 @@ printf("\n");
   
   printf("\n\n");
     
+    fclose(fichier);
+}
+
     
-    
-    //glouton_prevoyant(mondeCarre, dim);
-    
-   // printf("\n");
-    // affiche(mondeCarre, dim);
 
     return 0;
 }

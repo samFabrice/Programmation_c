@@ -6,13 +6,13 @@
 #include <time.h>
 #include <unistd.h>
 
-void glouton_prevoyant(char mondeCarre[30][30],  int dim)
+void glouton_prevoyant(char mondeCarre[30][30],  int dim, float *pscore_glouton_prevoyant)
 {
-   char joueur_glouton_prevoyant= '@';
+  char joueur_glouton_prevoyant= '@';
   float score_joueur_glouton_prevoyant = 0;
     printf("joueur_glouton_prevoyant = %c \n", joueur_glouton_prevoyant);
     char couleur_aleatoire;
-   char tab[1000] = {0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
+   char tab[10000] = {0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
     int a = 0;
     
@@ -152,7 +152,8 @@ void glouton_prevoyant(char mondeCarre[30][30],  int dim)
 
 
           score_joueur_glouton_prevoyant =   (score_joueur_glouton_prevoyant/900)*100;
-        printf("score_joueur_glouton_prevoyant = %f\n", score_joueur_glouton_prevoyant);
+          *pscore_glouton_prevoyant =  score_joueur_glouton_prevoyant;
+        printf("score_joueur_glouton_prevoyant = %f\n", *pscore_glouton_prevoyant);
     
                             
 }

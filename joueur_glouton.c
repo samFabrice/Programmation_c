@@ -6,13 +6,13 @@
 #include <time.h>
 #include <unistd.h>
 
-void glouton (char mondeCarre[30][30],  int dim  )
+void glouton (char mondeCarre[30][30],  int dim, float *p_joueur_glouton  )
 {
     char joueur_glouton= '^';
      float score_joueur_glouton ;
     printf("joueur_glouton = %c \n", joueur_glouton);
     char couleur_aleatoire;
-    char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui qui peuvent ajouter des cases à la zone du joueur
+    char tab[1000] = {0,0,0,0,0,0,0,0}; // On initialise un tableau dans lequel on stoque les couleurs qui peuvent ajouter des cases à la zone du joueur
     int o = 0;
                 for (int i =0; i<30; i++)
                     {
@@ -133,5 +133,7 @@ void glouton (char mondeCarre[30][30],  int dim  )
         }
     }
      score_joueur_glouton =   (score_joueur_glouton/900)*100;
-    printf("score_joueur_glouton = %f\n", score_joueur_glouton);
+      *p_joueur_glouton  =  score_joueur_glouton ;
+    printf("score_joueur_glouton = %f\n",  *p_joueur_glouton);
+    
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void joueur_2 (char mondeCarre[30][30] , int dim)
+void joueur_2 (char mondeCarre[30][30] , int dim, float *pscore2 )
 {
     float score_joueur_2 = 0;
     char joueur_2 = '^';
@@ -65,7 +65,8 @@ void joueur_2 (char mondeCarre[30][30] , int dim)
         }
     }
     score_joueur_2 = (score_joueur_2/900)*100;
-    printf("score_joueur_1 = %f\n", score_joueur_2);
+    *pscore2= score_joueur_2;
+    printf("score_joueur_2 = %f\n", *pscore2);
            
            
 }

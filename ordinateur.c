@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>    
 
-void ordinateur (char mondeCarre[30][30] , int dim)
+void ordinateur (char mondeCarre[30][30] , int dim, float *pscore_ordinateur)
 {
     char ordi ;
     ordi = '@';
@@ -65,7 +65,8 @@ void ordinateur (char mondeCarre[30][30] , int dim)
         }
     }
         score_ordi = (score_ordi/900)*100;
-        printf("score_ordi = %f\n", score_ordi);
+        *pscore_ordinateur = score_ordi;
+        printf("score_ordi = %f\n", *pscore_ordinateur);
     
 }
 
