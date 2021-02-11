@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+/// DRY:  Don't repeat yourself.
+/// WET:  We enjoy typing.
 void joueur_1 (char mondeCarre[30][30] , int dim, float *pscore1)
 {  
     

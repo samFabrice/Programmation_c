@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-char alea (char mondeCarre[30][30],  int dim)
+char alea (/*char mondeCarre[30][30],  int dim*/)
 {
     /*
      Cette fonction permet de choisir de manière aléatoire l'une des 7 couleurs comprises entre A et G

@@ -1,10 +1,10 @@
-CC=gcc #Commande du compilateur
-CFLAGS=-W  #Option d'optimisation du programme
+CC=gcc ### 
+CFLAGS=-Wall -O3 -std=c99#
 EXEC = jeu
 all: $(EXEC)
 
 ${EXEC}: jeu.o  affiche.o init.o aleatoire.o joueur_contre_joueur.o joueur_1.o joueur_2.o ordinateur.o joueur2_VS_joueur_glouton_prevoyant.o joueur_contre_ordinateur.o  alea2.o joueur_glouton.o loi_du_plus_fort.o  loi_du_plus_fort2.o joueur_glouton_prevoyant.o joueur1_VS_joueur_glouton.o
-	$(CC) $(CFLAGS) -o jeu jeu.o affiche.o init.o aleatoire.o  joueur_contre_joueur.o joueur_contre_ordinateur.o joueur2_VS_joueur_glouton_prevoyant.o  joueur_1.o joueur_2.o ordinateur.o alea2.o joueur_glouton.o  loi_du_plus_fort.o loi_du_plus_fort2.o joueur_glouton_prevoyant.o joueur1_VS_joueur_glouton.o
+	$(CC) $(CFLAGS) -o binary/jeu jeu.o affiche.o init.o aleatoire.o  joueur_contre_joueur.o joueur_contre_ordinateur.o joueur2_VS_joueur_glouton_prevoyant.o  joueur_1.o joueur_2.o ordinateur.o alea2.o joueur_glouton.o  loi_du_plus_fort.o loi_du_plus_fort2.o joueur_glouton_prevoyant.o joueur1_VS_joueur_glouton.o
 
 jeu.o: jeu.c
 	$(CC) $(CFLAGS) -o jeu.o -c jeu.c  
